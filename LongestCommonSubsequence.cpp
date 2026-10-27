@@ -9,7 +9,8 @@ public:
             for(int j=1; j<n2+1;j++){
               // nếu trùng thì +1 vào tổng
                 if(text1[i-1]==text2[j-1]) dp[i][j] = dp[i-1][j-1]+1;
-                  //ko thì lấy hướng dịch nào có tổng lớn hơn
+                // nếu khác nhau, chọn cách bỏ 1 ký tự
+                // ở một trong hai chuỗi sao cho LCS lớn nhất
                 else dp[i][j] = max(dp[i][j-1], dp[i-1][j]);
             }
 
